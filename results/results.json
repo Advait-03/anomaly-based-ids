@@ -1,0 +1,14 @@
+{
+  "threshold": 0.14115964232150902,
+  "confusion_matrix": [
+    [
+      9702,
+      9
+    ],
+    [
+      11904,
+      929
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           0     0.4490    0.9991    0.6196      9711\n           1     0.9904    0.0724    0.1349     12833\n\n    accuracy                         0.4716     22544\n   macro avg     0.7197    0.5357    0.3773     22544\nweighted avg     0.7572    0.4716    0.3437     22544\n"
+}
