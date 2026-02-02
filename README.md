@@ -5,10 +5,10 @@ This project implements an anomaly-based Intrusion Detection System (IDS) using 
 The system learns baseline normal network behavior and flags suspicious traffic as anomalies.
 
 ## Dataset
-- NSL-KDD
+- **NSL-KDD**
   - `KDDTrain+.txt`
   - `KDDTest+.txt`
-  
+
 Dataset files are **not committed** to the repository.
 
 ## Approach
@@ -34,61 +34,48 @@ Dataset files are **not committed** to the repository.
 
 ## Project Structure
 
-data/raw/ -> dataset files (not committed)
-src/ -> reusable source code
-models/ -> saved models (not committed)
-results/ -> generated results (not committed)
-notebooks/ -> EDA notebook
-
-
 ## How to Run
 
-1) Create virtual environment and install dependencies
-```in bash
-
+### 1) Create virtual environment and install dependencies
+```bash
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
-2) Place dataset files
-
 data/raw/KDDTrain+.txt
 data/raw/KDDTest+.txt
 
-3) Run the full pipeline
-
 python -m src.run_pipeline
 
-Output:-
 
-  Trained model saved to: models/isolation_forest.pkl
+Output
 
-  Evaluation results saved to: results/results.json
+Trained model saved to: models/isolation_forest.pkl
 
-  Confusion matrix and classification report printed in terminal
+Evaluation results saved to: results/results.json
 
+Confusion matrix and classification report printed in terminal
 
-Results Summary:-
+Results Summary
 
-  Best threshold tested: 80th percentile
+Best threshold tested: 80th percentile
 
-  Attack Recall: 16.61%
+Attack Recall: 16.61%
 
-  False Positive Rate (FPR): 0.16%
+False Positive Rate (FPR): 0.16%
 
 The IDS behaves conservatively, producing very low false positives at the cost of lower attack recall.
 
+Limitations and Future Work
 
-Limitations and Future Work:-
+Low recall indicates that many attacks resemble normal traffic in feature space
 
-  Low recall indicates that many attacks resemble normal traffic in feature space
+Threshold tuning significantly affects detection performance
 
-  Threshold tuning significantly affects detection performance
+Future improvements may include:
 
-  Future improvements may include:
+Tuning Isolation Forest contamination
 
-  Tuning Isolation Forest contamination
+Comparing with One-Class SVM
 
-  Comparing with One-Class SVM
-
-  Feature reduction to improve anomaly separation
+Feature reduction to improve anomaly separation
