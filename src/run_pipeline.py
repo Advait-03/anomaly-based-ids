@@ -47,7 +47,7 @@ def main():
     save_model(model, os.path.join(project_root, "models", "isolation_forest.pkl"))
 
     train_scores = get_anomaly_scores(model, X_train_processed)
-    threshold = choose_threshold(train_scores, percentile=95)
+    threshold = choose_threshold(train_scores, percentile=80)
 
     scores, preds, cm, report = evaluate_model(
         model,

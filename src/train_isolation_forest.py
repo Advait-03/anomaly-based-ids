@@ -5,7 +5,7 @@ from sklearn.ensemble import IsolationForest
 def train_isolation_forest(X_train):
     model = IsolationForest(
         n_estimators=200,
-        contamination=0.1,
+        contamination=0.2,
         random_state=42,
         n_jobs=-1
     )
